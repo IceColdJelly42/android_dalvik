@@ -642,7 +642,7 @@ void dvmCollectGarbageInternal(const GcSpec* spec)
      * Move queue of pending references back into Java.
      */
     dvmEnqueueClearedReferences(&gDvm.gcHeap->clearedReferences);
-#ifdef Debug
+#ifdef DEBUG
     gcEnd = dvmGetRelativeTimeMsec();
     percentFree = 100 - (size_t)(100.0f * (float)currAllocated / currFootprint);
     if (!spec->isConcurrent) {
