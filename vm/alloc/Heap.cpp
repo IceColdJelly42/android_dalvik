@@ -31,7 +31,6 @@
 #include <limits.h>
 #include <errno.h>
 
-
 static const GcSpec kGcForMallocSpec = {
     true,  /* isPartial */
     false,  /* isConcurrent */
@@ -443,9 +442,10 @@ void dvmCollectGarbageInternal(const GcSpec* spec)
     GcHeap *gcHeap = gDvm.gcHeap;
 #ifdef DEBUG
 /*  Commented out because in gcc 4.7 werror-unusedVarible is running 
- *  before the ifdef breaking the build*/
-    u4 gcEnd = 0;
-    size_t percentFree;
+ *  before the ifdef breaking the build
+ *  u4 gcEnd = 0;
+ *  size_t percentFree;
+ */
 #endif
     u4 rootStart = 0 , rootEnd = 0;
     u4 dirtyStart = 0, dirtyEnd = 0;
